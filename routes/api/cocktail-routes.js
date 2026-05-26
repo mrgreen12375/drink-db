@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Op } = require('sequelize');
 const { Cocktail } = require('../../models');
 
 
@@ -24,6 +25,52 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ message: 'No cocktail found with this id' });
         return;
       }
+      res.json(dbCocktailData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// get cocktail by drink name
+router.get('/name/:drinkName', (req, res) => {
+  Cocktail.findOne({
+    where: {
+      drinkName: {
+        [Op.iLike]: req.params.drinkName
+      }
+    }
+  })
+    .then(dbCocktailData => {
+      if (!dbCocktailData) {
+        res.status(404).json({ message: 'No cocktail found with this name' });
+        return;
+      }
+
+      res.json(dbCocktailData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// get cocktail by alcohol name
+router.get('/alcohol/:drinkIngredient1', (req, res) => {
+  Cocktail.findAll({
+    where: {
+      drinkIngredient1: {
+        [Op.iLike]: req.params.drinkIngredient1
+      }
+    }
+  })
+    .then(dbCocktailData => {
+      if (!dbCocktailData) {
+        res.status(404).json({ message: 'No cocktail found with this name' });
+        return;
+      }
+
       res.json(dbCocktailData);
     })
     .catch(err => {
