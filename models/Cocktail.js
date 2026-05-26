@@ -25,27 +25,63 @@ Cocktail.init(
     },
     drinkIngredient1: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     drinkIngredient2: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     drinkIngredient3: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    drinkIngredient4: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    drinkIngredient5: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    drinkIngredient6: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    drinkIngredient7: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     drinkMeasurement1: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     drinkMeasurement2: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     drinkMeasurement3: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    drinkMeasurement4: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    drinkMeasurement5: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    drinkMeasurement6: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    drinkMeasurement7: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    drinkVideo: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {

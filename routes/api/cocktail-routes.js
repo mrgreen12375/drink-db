@@ -43,7 +43,8 @@ router.post('/', (req, res) => {
     drinkIngredient3: req.body.drinkIngredient3,
     drinkMeasurement1: req.body.drinkMeasurement1,
     drinkMeasurement2: req.body.drinkMeasurement2,
-    drinkMeasurement3: req.body.drinkMeasurement3
+    drinkMeasurement3: req.body.drinkMeasurement3,
+    drinkVideo: req.body.drinkVideo
   })
     .then(dbCocktailData => res.json(dbCocktailData))
     .catch(err => {
