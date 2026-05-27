@@ -16,13 +16,20 @@ A cocktail database using postresSQL, Sequalize, and express. Setup GET, POST , 
 
 ## Installation
 pg
+
 sequelize
+
 express
+
 dotenv
 
 ## Usage
-\i schema.sql
+\i schema.sql (In db file)
+
+npm i
+
 npm run seed
+
 npm start
 
 ## Contributing
