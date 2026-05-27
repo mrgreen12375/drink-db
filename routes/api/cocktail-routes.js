@@ -88,9 +88,17 @@ router.post('/', (req, res) => {
     drinkIngredient1: req.body.drinkIngredient1,
     drinkIngredient2: req.body.drinkIngredient2,
     drinkIngredient3: req.body.drinkIngredient3,
+    drinkIngredient4: req.body.drinkIngredient4,
+    drinkIngredient5: req.body.drinkIngredient5,
+    drinkIngredient6: req.body.drinkIngredient6,
+    drinkIngredient7: req.body.drinkIngredient7,
     drinkMeasurement1: req.body.drinkMeasurement1,
     drinkMeasurement2: req.body.drinkMeasurement2,
     drinkMeasurement3: req.body.drinkMeasurement3,
+    drinkMeasurement4: req.body.drinkMeasurement4,
+    drinkMeasurement5: req.body.drinkMeasurement5,
+    drinkMeasurement6: req.body.drinkMeasurement6,
+    drinkMeasurement7: req.body.drinkMeasurement7,
     drinkVideo: req.body.drinkVideo
   })
     .then(dbCocktailData => res.json(dbCocktailData))
