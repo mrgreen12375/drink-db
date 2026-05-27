@@ -6,7 +6,7 @@ const { Cocktail } = require('../../models');
 // get all cocktails
 router.get('/', (req, res) => {
   Cocktail.findAll()
-    .then(dbCocktailData => res.json(dbCocktailData))
+    .then(drinkData => res.json(drinkData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -20,12 +20,12 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbCocktailData => {
-      if (!dbCocktailData) {
+    .then(drinkData => {
+      if (!drinkData) {
         res.status(404).json({ message: 'No cocktail found with this id' });
         return;
       }
-      res.json(dbCocktailData);
+      res.json(drinkData);
     })
     .catch(err => {
       console.log(err);
@@ -42,13 +42,13 @@ router.get('/name/:drinkName', (req, res) => {
       }
     }
   })
-    .then(dbCocktailData => {
-      if (!dbCocktailData) {
+    .then(drinkData => {
+      if (!drinkData) {
         res.status(404).json({ message: 'No cocktail found with this name' });
         return;
       }
 
-      res.json(dbCocktailData);
+      res.json(drinkData);
     })
     .catch(err => {
       console.log(err);
@@ -65,13 +65,13 @@ router.get('/alcohol/:drinkIngredient1', (req, res) => {
       }
     }
   })
-    .then(dbCocktailData => {
-      if (!dbCocktailData) {
+    .then(drinkData => {
+      if (!drinkData) {
         res.status(404).json({ message: 'No cocktail found with this name' });
         return;
       }
 
-      res.json(dbCocktailData);
+      res.json(drinkData);
     })
     .catch(err => {
       console.log(err);
@@ -101,7 +101,7 @@ router.post('/', (req, res) => {
     drinkMeasurement7: req.body.drinkMeasurement7,
     drinkVideo: req.body.drinkVideo
   })
-    .then(dbCocktailData => res.json(dbCocktailData))
+    .then(drinkData => res.json(drinkData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -115,12 +115,12 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbCocktailData => {
-      if (!dbCocktailData[0]) {
+    .then(drinkData => {
+      if (!drinkData[0]) {
         res.status(404).json({ message: 'No cocktail found with this id' });
         return;
       }
-      res.json(dbCocktailData);
+      res.json(drinkData);
     })
     .catch(err => {
       console.log(err);
@@ -135,12 +135,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbCocktailData => {
-      if (!dbCocktailData) {
+    .then(drinkData => {
+      if (!drinkData) {
         res.status(404).json({ message: 'No cocktail found with this id' });
         return;
       }
-      res.json(dbCocktailData);
+      res.json(drinkData);
     })
     .catch(err => {
       console.log(err);
